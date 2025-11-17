@@ -7,5 +7,9 @@ export const theme = {
         marrom: "#824017",
         amarelo: "#F3A200",
         laranja: "#F48C24"
+    },
+
+    fonts:{
+        size:20
     }
 }

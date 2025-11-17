@@ -17,5 +17,17 @@ export const style = StyleSheet.create({
         borderRadius: 30,
         elevation: 5,
         justifyContent: "space-around"
+    },
+
+    whiteCard:{
+        width:"90%",
+        height: 300,
+        backgroundColor: "#FFF",
+        alignContent: 'center',
+        alignItems: 'center',
+        borderRadius: 15,
+        elevation: 3,
+        padding: 30,
+        gap:30,
     }
 })
