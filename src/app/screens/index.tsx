@@ -13,9 +13,9 @@ export default function Index() {
       style={style.container}
       resizeMode="cover"
     >
+      <StatusBar style="dark"/>
                       
       <SafeAreaView style={style.container}>
-        <StatusBar style="dark"/>
         <View style={style.blueCard}>
           <Image source={require("../../../assets/images/LogoBdB.png")}
           style={{width:300, height: 300}}/>
@@ -23,7 +23,7 @@ export default function Index() {
           <ButtonBranco activeOpacity={0.8} title="LOGIN" onPress={() => router.push("/screens/login")}/>
         </View>
 
-        <ButtonAzul activeOpacity={0.8} title="CADASTRE-SE"/>
+        <ButtonAzul activeOpacity={0.8} title="CADASTRE-SE" onPress={() => router.push("/screens/cadastro")}/>
 
       </SafeAreaView>
     </ImageBackground>
