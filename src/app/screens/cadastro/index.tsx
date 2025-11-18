@@ -12,7 +12,7 @@ import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 export default function TelaCadastro() {
 
-    const [dataNascimento, setDataNascimento] = useState(null);
+    const [dataNascimento, setDataNascimento] = useState(null); // (nem Date)
     const [mostrarCalendario, setMostrarCalendario] = useState(false);
     const [mostrarSenha, setMostrarSenha] = useState(false)
 

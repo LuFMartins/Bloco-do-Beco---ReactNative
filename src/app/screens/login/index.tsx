@@ -20,7 +20,7 @@ export default function TelaLogin() {
             return;
         }
 
-        alert('Fazendo login...')
+        router.push("/screens/home")
     }
   
     return (
@@ -36,32 +36,32 @@ export default function TelaLogin() {
         keyboardVerticalOffset={0}
         behavior={Platform.OS === "ios"?"padding":"height"}>
             <SafeAreaView style={style.container}>
-            <ScrollView showsVerticalScrollIndicator={false} style={{width:"100%", height: 200}}>
-                
-                {/* Container azul flutuante*/}
-                <View style={style.blueCard}>
-                    <Image source={require("../../../../assets/images/LogoBdB.png")}
-                    style={{width:300, height: 200}}/>
+                <ScrollView showsVerticalScrollIndicator={false} style={{width:"100%", height: 200}}>
                     
-                    {/* Container Branco flutuante*/}
-                    <View style={style.whiteCard}>
-                            
-                        <Text numberOfLines={1} style={{width:"100%", textAlign:"center", fontSize:theme.fonts.size}}>Preencha os Campos</Text>
-                        {/* Email */}
-                        <Input placeholder="E-mail" keyboardType="email-address" autoCapitalize="none" value={email} onChangeText={setEmail}/>
-                        {/* Senha */}
-                        <Input placeholder="Senha" secureTextEntry value={senha} onChangeText={setSenha}/>
+                    {/* Container azul flutuante*/}
+                    <View style={style.blueCard}>
+                        <Image source={require("../../../../assets/images/LogoBdB.png")}
+                        style={{width:300, height: 200}}/>
+                        
+                        {/* Container Branco flutuante*/}
+                        <View style={style.whiteCard}>
+                                
+                            <Text numberOfLines={1} style={{width:"100%", textAlign:"center", fontSize:theme.fonts.size}}>Preencha os Campos</Text>
+                            {/* Email */}
+                            <Input placeholder="E-mail" keyboardType="email-address" autoCapitalize="none" value={email} onChangeText={setEmail}/>
+                            {/* Senha */}
+                            <Input placeholder="Senha" secureTextEntry value={senha} onChangeText={setSenha}/>
 
-                        <TouchableOpacity style={{width:"auto", marginBottom:30}}>
-                            <Text style={{color:theme.colors.azul, width:120, textAlign:'center'}}>Esqueci a senha</Text>
-                        </TouchableOpacity>
+                            <TouchableOpacity style={{width:"auto", marginBottom:30}}>
+                                <Text style={{color:theme.colors.azul, width:120, textAlign:'center'}}>Esqueci a senha</Text>
+                            </TouchableOpacity>
 
-                        <ButtonAzul title="LOGIN" onPress={handleLogin}/>
-                        <Link onPress={()=>router.back()}/>
+                            <ButtonAzul title="LOGIN" onPress={handleLogin}/>
+                            <Link onPress={()=>router.back()}/>
+                        </View>
                     </View>
-                </View>
-            
-            </ScrollView>   
+                
+                </ScrollView>   
             </SafeAreaView>
         </KeyboardAvoidingView>
     </ImageBackground>
