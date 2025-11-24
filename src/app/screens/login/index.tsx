@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { login } from "../../../firebase/services/authentication";
 import { ButtonAzul } from "../../components/Button/ButtonAzul/ButtonAzul";
 import { Link } from "../../components/Button/ButtonVoltar/Link";
 import { Input } from "../../components/TextInput/TextInput";
@@ -14,13 +15,19 @@ export default function TelaLogin() {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
 
-    function handleLogin(){
-        if(!email || !senha){
-            alert("Preencha o email e a senha!")
-            return;
-        }
+    async function handleLogin() {
 
-        router.push("/screens/home")
+        if(!email || !senha){
+            alert("Preencha todos os campos!")
+        } else{
+            try{
+                await login(email, senha)
+                router.push('/screens/home')
+            } catch (error){
+                alert("Login INVALIDO")
+            }
+        }
+        
     }
   
     return (
