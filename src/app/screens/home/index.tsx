@@ -6,8 +6,11 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import { Header } from "../../components/Header"
 import { theme } from "../../theme/theme"
 import { style } from "./style"
+//import { useContext } from 'react'
+//import {AuthContext} from "../../../firebase/contexts/AuthContext"
 
 export default function Home(){
+
     return(
         <ImageBackground style={{flex:1}} source={require("../../../../assets/images/PlanoDeFundo.png")}>
             <StatusBar style="dark"/>
