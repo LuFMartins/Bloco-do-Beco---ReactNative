@@ -1,12 +1,21 @@
+import { ButtonAzul } from "@/src/app/components/Button/ButtonAzul/ButtonAzul";
+import { ButtonBranco } from "@/src/app/components/Button/ButtonBranco/ButtonBranco";
+import { AuthContext } from "@/src/firebase/contexts/AuthContext";
+import { Redirect, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Alert, Image, ImageBackground, View } from "react-native";
+import { useContext } from "react";
+import { Image, ImageBackground, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonAzul } from "../components/Button/ButtonAzul/ButtonAzul";
-import { ButtonBranco } from "../components/Button/ButtonBranco/ButtonBranco";
 import { style } from "./style";
-import {router} from "expo-router"
 
 export default function Index() {
+
+  const {usuario} = useContext(AuthContext);
+
+  if(usuario){
+    return <Redirect href={"/screens/home"}/>
+  }
+
   return (
     <ImageBackground
       source={require("../../../assets/images/PlanoDeFundo.png")}

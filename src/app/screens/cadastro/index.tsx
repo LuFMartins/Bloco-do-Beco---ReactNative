@@ -1,3 +1,7 @@
+import { Link } from "@/src/app//components/Button/ButtonVoltar/Link";
+import { ButtonAzul } from "@/src/app/components/Button/ButtonAzul/ButtonAzul";
+import { Input } from "@/src/app/components/TextInput/TextInput";
+import { theme } from "@/src/app/theme/theme";
 import { db } from "@/src/firebase/firebaseConfig";
 import { register } from "@/src/firebase/services/authentication";
 import { router } from "expo-router";
@@ -7,10 +11,6 @@ import { useState } from "react";
 import { Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonAzul } from "../../components/Button/ButtonAzul/ButtonAzul";
-import { Link } from "../../components/Button/ButtonVoltar/Link";
-import { Input } from "../../components/TextInput/TextInput";
-import { theme } from "../../theme/theme";
 import { style } from "./style";
 
 
@@ -19,7 +19,7 @@ export default function TelaCadastro() {
     const [dataNascimento, setDataNascimento] = useState<Date | null>(null); // (nem Date)
     const [mostrarCalendario, setMostrarCalendario] = useState(false);
     
-    const [nomeCompleto, setNomeCompleto] = useState("");
+    const [nome, setNome] = useState("");
     const [telefone, setTelefone] = useState("");
     const [email, setEmail] = useState("");
     const [cpf, setCpf] = useState("");
@@ -33,7 +33,7 @@ export default function TelaCadastro() {
 
     /* Registro do Usuario */ 
     const camposObrigatorios = [
-        nomeCompleto,
+        nome,
         telefone,
         email,
         cpf,
@@ -54,7 +54,7 @@ export default function TelaCadastro() {
                 const uid = cred.user.uid
 
                 await setDoc(doc(db, "usuarios", uid), {
-                    nomeCompleto,
+                    nome,
                     telefone,
                     email,
                     cpf,
@@ -75,7 +75,7 @@ export default function TelaCadastro() {
     }
     
     return(
-        <ImageBackground style={style.container} source={require("../../../../assets/images/PlanoDeFundo.png")}>
+        <ImageBackground style={style.container} source={require("@/assets/images/PlanoDeFundo.png")}>
             <StatusBar style="dark"/>
             
             <KeyboardAvoidingView 
@@ -85,13 +85,13 @@ export default function TelaCadastro() {
                 <SafeAreaView style={style.container_02}>
                     <ScrollView showsVerticalScrollIndicator={false} style={{width:"100%", height: 200}}>
                         <View style={style.blueCard}>
-                            <Image source={require("../../../../assets/images/LogoBdB.png")}
+                            <Image source={require("@/assets/images/LogoBdB.png")}
                             style={{width:300, height: 200}}/>
                             <View style={style.whiteCard}>
                                     
                                 <Text numberOfLines={1} style={{width:"100%", textAlign:"center", fontSize:theme.fonts.size}}>Preencha os Campos</Text>
                                 
-                                <Input placeholder="Nome Completo" keyboardType="default" autoCapitalize="words" onChangeText={setNomeCompleto}/>
+                                <Input placeholder="Nome Completo" keyboardType="default" autoCapitalize="words" onChangeText={setNome}/>
                                 
                                 <Input placeholder="Telefone" keyboardType="phone-pad" onChangeText={setTelefone}/>
                                 

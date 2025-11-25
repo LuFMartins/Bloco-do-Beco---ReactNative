@@ -1,17 +1,20 @@
+import { theme } from "@/src/app/theme/theme"
+import { AuthContext } from "@/src/firebase/contexts/AuthContext"
 import { Ionicons } from "@expo/vector-icons"
+import { useContext } from "react"
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import { theme } from "../../theme/theme"
 
 export function Header({backgroundColor = ""}){ // adicionar parametro que puxa nome do usuario
+    const { usuario } = useContext(AuthContext);
     return(
         <View style={[style.header, {backgroundColor}]}>
             <TouchableOpacity activeOpacity={0.8}>
-                <Image style={{width: 70, height: 70}} source={require("../../../../assets/images/LogoBdB2.png")}/>
+                <Image style={{width: 70, height: 70}} source={require("@/assets/images/LogoBdB2.png")}/>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.9}>
                 <View style={style.user}>
-                    <Image style={{width: 45, height: 45, borderRadius:100}} source={require("../../../../assets/images/icon.png")}/>
-                    <Text style={style.title}>Nome do Usuario</Text>
+                    <Image style={{width: 45, height: 45, borderRadius:100}} source={require("@/assets/images/icon.png")}/>
+                    <Text style={style.title}>{usuario?.nome}</Text>
                 </View>
             </TouchableOpacity>
             <View style={style.nav}>

@@ -1,13 +1,13 @@
+import { ButtonAzul } from "@/src/app/components/Button/ButtonAzul/ButtonAzul";
+import { Link } from "@/src/app/components/Button/ButtonVoltar/Link";
+import { Input } from "@/src/app/components/TextInput/TextInput";
+import { theme } from "@/src/app/theme/theme";
+import { login } from "@/src/firebase/services/authentication";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { login } from "../../../firebase/services/authentication";
-import { ButtonAzul } from "../../components/Button/ButtonAzul/ButtonAzul";
-import { Link } from "../../components/Button/ButtonVoltar/Link";
-import { Input } from "../../components/TextInput/TextInput";
-import { theme } from "../../theme/theme";
 import { style } from "./style";
 
 export default function TelaLogin() {
@@ -22,7 +22,7 @@ export default function TelaLogin() {
         } else{
             try{
                 await login(email, senha)
-                router.push('/screens/home')
+                router.replace('/screens/home')
             } catch (error){
                 alert("Login INVALIDO")
             }
@@ -32,7 +32,7 @@ export default function TelaLogin() {
   
     return (
     <ImageBackground
-      source={require("../../../../assets/images/PlanoDeFundo.png")}
+      source={require("@/assets/images/PlanoDeFundo.png")}
       style={style.container}
       resizeMode="cover"
     >
@@ -47,7 +47,7 @@ export default function TelaLogin() {
                     
                     {/* Container azul flutuante*/}
                     <View style={style.blueCard}>
-                        <Image source={require("../../../../assets/images/LogoBdB.png")}
+                        <Image source={require("@/assets/images/LogoBdB.png")}
                         style={{width:300, height: 200}}/>
                         
                         {/* Container Branco flutuante*/}

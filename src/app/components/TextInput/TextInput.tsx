@@ -1,5 +1,5 @@
+import { theme } from "@/src/app/theme/theme";
 import { StyleSheet, TextInput, TextInputProps } from "react-native";
-import { theme } from "../../theme/theme";
 
 export function Input (props: TextInputProps){
     return(
