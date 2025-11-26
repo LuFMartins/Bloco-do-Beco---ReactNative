@@ -31,7 +31,7 @@ export const style = StyleSheet.create({
     },
 
     titleBtAzul:{
-        fontSize: 18,
+        fontSize: theme.fonts.h2,
         fontStyle:"normal",
         color:"#FFF",
         fontWeight: "bold"
@@ -48,7 +48,7 @@ export const style = StyleSheet.create({
     },
 
     titleBtBranco:{
-        fontSize: 20,
+        fontSize: theme.fonts.h2,
         fontStyle:"normal",
         color: "#000",
         fontWeight: "bold"

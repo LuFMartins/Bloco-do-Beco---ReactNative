@@ -15,8 +15,8 @@ export const style = StyleSheet.create({
     blueCard:{
         backgroundColor: theme.colors.azul,
         width: "90%",
-        height:"99%",
-        paddingBottom:20,
+        height:"97%",
+        paddingBottom:0,
         alignContent: 'center',
         alignItems: 'center',
         borderRadius: 30,
@@ -46,5 +46,22 @@ export const style = StyleSheet.create({
         flexGrow: 1,
         width:Dimensions.get('window').width,
         alignItems:"center",
+    },
+
+    buttonAzul:{
+        width: "80%",
+        height: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: theme.colors.azul,
+        borderRadius: 15,
+        elevation: 3
+    },
+
+    titleBtAzul:{
+        fontSize: theme.fonts.h2,
+        fontStyle:"normal",
+        color:"#FFF",
+        fontWeight: "bold"
     }
 })

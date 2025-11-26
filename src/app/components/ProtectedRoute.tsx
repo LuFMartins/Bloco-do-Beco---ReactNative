@@ -17,7 +17,7 @@ export default function ProtectedRoute({ children }: any) {
   }
 
   if (!usuario) {
-    return <Redirect href="/screens/login" />;
+    return <Redirect href="/screens/inicial" />;
   }
 
   return children;

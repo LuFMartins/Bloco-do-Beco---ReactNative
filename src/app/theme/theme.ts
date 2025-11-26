@@ -1,3 +1,4 @@
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 export const theme = {
 
@@ -13,6 +14,7 @@ export const theme = {
     },
 
     fonts:{
-        size:20
+        h2: RFPercentage(2),
+        p: RFPercentage(1.5)
     }
 }

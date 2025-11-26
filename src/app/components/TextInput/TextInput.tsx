@@ -15,6 +15,6 @@ const style = StyleSheet.create({
         borderBottomWidth: 1,
         textAlign:'left',
         padding: 3,
-        fontSize:15,
+        fontSize:theme.fonts.p,
     }
 })

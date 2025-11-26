@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <ImageBackground
-      source={require("../../../assets/images/PlanoDeFundo.png")}
+      source={require("@/assets/images/PlanoDeFundo.png")}
       style={style.container}
       resizeMode="cover"
     >
@@ -24,7 +24,7 @@ export default function Index() {
                       
       <SafeAreaView style={style.container}>
         <View style={style.blueCard}>
-          <Image source={require("../../../assets/images/LogoBdB.png")}
+          <Image source={require("@/assets/images/LogoBdB.png")}
           style={{width:"70%", height: "30%"}}/>
 
           <TouchableOpacity style={style.buttonBranco} activeOpacity={0.8} onPress={() => router.push("/screens/login")}>

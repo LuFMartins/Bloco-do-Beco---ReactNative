@@ -13,7 +13,7 @@ export const style = StyleSheet.create({
     },
 
     title:{
-        fontSize: 18,
+        fontSize: theme.fonts.h2,
         fontStyle:"normal",
         color:"#FFF",
         fontWeight: "bold"

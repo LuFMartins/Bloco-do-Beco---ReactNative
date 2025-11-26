@@ -7,8 +7,8 @@ import React, { useState } from "react";
 import { Image, ImageBackground, KeyboardAvoidingView, Platform, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonAzul } from "../../components/Button/ButtonAzul/ButtonAzul";
 import { Link } from "../../components/Button/ButtonVoltar/Link";
+import { SenhaInput } from "../../components/SenhaInput/SenhaInput";
 import { Input } from "../../components/TextInput/TextInput";
 import { theme } from "../../theme/theme";
 import { style } from "./style";
@@ -96,7 +96,7 @@ export default function TelaCadastro() {
                             style={{width:"70%", height:300, resizeMode:"contain"}}/>
                             <View style={style.whiteCard}>
                                     
-                                <Text numberOfLines={1} style={{width:"100%", textAlign:"center", fontSize:theme.fonts.size}}>Preencha os Campos</Text>
+                                <Text numberOfLines={1} style={{width:"100%", textAlign:"center", fontSize:theme.fonts.h2}}>Preencha os Campos</Text>
                                 
                                 <Input placeholder="Nome Completo" keyboardType="default" autoCapitalize="words" onChangeText={setNome}/>
                                 
@@ -118,24 +118,20 @@ export default function TelaCadastro() {
                                 <TouchableOpacity onPress={() => setMostrarCalendario(true)}
                                     style={{
                                     width: "100%",
-                                    borderBottomWidth: 1,
-                                    padding:5,
-                                    borderColor: "#AAA",
                                     borderRadius: 10,
                                     marginTop: 10,
                                     }}
                                 >
-                                    <Text style={{fontSize:18}}>
+                                    <Text style={{fontSize:theme.fonts.p, width:"100%", borderBottomWidth: 1, borderColor: "#AAA", padding:3}}>
                                         {dataNascimento ? dataNascimento.toLocaleDateString("pt-BR") : "Data de Nascimento"}
                                     </Text>
                                 </TouchableOpacity>       
             
-                                <Input placeholder="Senha" secureTextEntry={!mostrarSenha} onChangeText={setSenha}/>
-                                <TouchableOpacity style={{width:100, marginBottom: 50}} onPress={() => setMostrarSenha(!mostrarSenha)}>
-                                    <Text style={{textAlign:"center"}}>{mostrarSenha? "Esconder Senha" : "Mostrar Senha"}</Text>
-                                </TouchableOpacity>
+                                <SenhaInput value={senha} onChangeText={setSenha}/>
                                                                 
-                                <ButtonAzul title="CADASTRAR" onPress={handleRegister} />
+                                <TouchableOpacity style={style.buttonAzul} activeOpacity={0.8} onPress={() => handleRegister()}>
+                                    <Text style={style.titleBtAzul}>CADASTRAR</Text>
+                                </TouchableOpacity>
                                 <Link onPress={()=>router.back()}/>
                             </View>
                         </View>

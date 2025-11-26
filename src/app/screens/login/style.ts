@@ -1,48 +1,40 @@
 import { theme } from "@/src/app/theme/theme"
-import { StyleSheet } from "react-native"
+import { Dimensions, StyleSheet } from "react-native"
 
 export const style = StyleSheet.create({ 
     container:{
         flex:1,
-        alignContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        alignContent:"center"
     },
 
     blueCard:{
         backgroundColor: theme.colors.azul,
         width: "90%",
-        height:"95%",
         borderRadius: 30,
         elevation: 5,
         alignItems:"center",
         alignContent:"center",
-        justifyContent:"space-around",
-        paddingEnd: 20,
-        paddingStart: 20,
+        justifyContent:"flex-start",
+        paddingBottom: 30
     },
 
     whiteCard:{
-        width:"100%",
-        height:"auto",
+        width:"90%",
         backgroundColor: "#FFF",
         alignContent: 'center',
         alignItems: 'center',
         justifyContent:"center",
         borderRadius: 15,
         elevation: 3,
-        padding: 25,
+        paddingHorizontal: "10%",
+        paddingVertical:"10%",
         gap:30,
     },
-
-    logo:{
-        width:"80%",
-        height:"30%"
-    },
-
     
     buttonAzul:{
         width: "80%",
-        height: "15%",
+        height: 50,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: theme.colors.azul,
@@ -51,9 +43,15 @@ export const style = StyleSheet.create({
     },
 
     titleBtAzul:{
-        fontSize: 18,
+        fontSize: theme.fonts.h2,
         fontStyle:"normal",
         color:"#FFF",
         fontWeight: "bold"
     },
+
+    scroll:{
+            flexGrow: 1,
+            width:Dimensions.get('window').width,
+            alignItems:"center"
+        }
 })

@@ -21,7 +21,7 @@ const style = StyleSheet.create({
         textAlign:"center",
         color:theme.colors.azul, 
         width:"100%",
-        fontSize: 18,
+        fontSize: theme.fonts.p,
         alignItems:"center",
         justifyContent:"center",
     }
