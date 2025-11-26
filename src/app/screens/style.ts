@@ -5,13 +5,14 @@ export const style = StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center',
-        gap: 20
+        gap: 55,
+        width:"100%"
     },
 
     blueCard:{
         backgroundColor: theme.colors.azul,
-        width: 400,
-        height: 750,
+        width: "90%",
+        height: "80%",
         alignContent: 'center',
         alignItems: 'center',
         borderRadius: 30,
@@ -19,15 +20,38 @@ export const style = StyleSheet.create({
         justifyContent: "space-around"
     },
 
-    whiteCard:{
-        width:"90%",
-        height: 300,
-        backgroundColor: "#FFF",
-        alignContent: 'center',
-        alignItems: 'center',
+    buttonAzul:{
+        width: "60%",
+        height: "8%",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: theme.colors.azul,
         borderRadius: 15,
-        elevation: 3,
-        padding: 30,
-        gap:30,
+        elevation: 3
+    },
+
+    titleBtAzul:{
+        fontSize: 18,
+        fontStyle:"normal",
+        color:"#FFF",
+        fontWeight: "bold"
+    },
+
+    buttonBranco:{
+        width: "65%",
+        height: "10%",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFF",
+        borderRadius: 15,
+        elevation: 3
+    },
+
+    titleBtBranco:{
+        fontSize: 20,
+        fontStyle:"normal",
+        color: "#000",
+        fontWeight: "bold"
     }
+
 })

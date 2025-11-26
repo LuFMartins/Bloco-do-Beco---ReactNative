@@ -1,10 +1,8 @@
-import { ButtonAzul } from "@/src/app/components/Button/ButtonAzul/ButtonAzul";
-import { ButtonBranco } from "@/src/app/components/Button/ButtonBranco/ButtonBranco";
 import { AuthContext } from "@/src/firebase/contexts/AuthContext";
 import { Redirect, router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useContext } from "react";
-import { Image, ImageBackground, View } from "react-native";
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { style } from "./style";
 
@@ -27,12 +25,16 @@ export default function Index() {
       <SafeAreaView style={style.container}>
         <View style={style.blueCard}>
           <Image source={require("../../../assets/images/LogoBdB.png")}
-          style={{width:300, height: 300}}/>
+          style={{width:"70%", height: "30%"}}/>
 
-          <ButtonBranco activeOpacity={0.8} title="LOGIN" onPress={() => router.push("/screens/login")}/>
+          <TouchableOpacity style={style.buttonBranco} activeOpacity={0.8} onPress={() => router.push("/screens/login")}>
+            <Text style={style.titleBtBranco}>LOGIN</Text>
+          </TouchableOpacity>
         </View>
 
-        <ButtonAzul activeOpacity={0.8} title="CADASTRE-SE" onPress={() => router.push("/screens/cadastro")}/>
+        <TouchableOpacity style={style.buttonAzul} activeOpacity={0.8} onPress={() => router.push("/screens/cadastro")}>
+            <Text style={style.titleBtAzul}>CADASTRAR-SE</Text>
+        </TouchableOpacity>
 
       </SafeAreaView>
     </ImageBackground>

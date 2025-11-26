@@ -3,8 +3,8 @@ import { theme } from "../../../theme/theme"
 
 export const style = StyleSheet.create({
     button:{
-        width: 300,
-        height: 70,
+        width: "60%",
+        height: "8%",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: theme.colors.azul,
@@ -13,7 +13,7 @@ export const style = StyleSheet.create({
     },
 
     title:{
-        fontSize: 20,
+        fontSize: 18,
         fontStyle:"normal",
         color:"#FFF",
         fontWeight: "bold"

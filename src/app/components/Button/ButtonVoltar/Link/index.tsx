@@ -11,16 +11,17 @@ export function Link(props:TouchableOpacityProps){
 
 const style = StyleSheet.create({
     container:{
-        width: 70, 
-        padding: 20, 
+        width: "100%", 
+        paddingBottom: 10, 
         alignItems:"center",
+        
     },
 
     title:{
         textAlign:"center",
         color:theme.colors.azul, 
-        width:70,
-        fontSize: 20,
+        width:"100%",
+        fontSize: 18,
         alignItems:"center",
         justifyContent:"center",
     }

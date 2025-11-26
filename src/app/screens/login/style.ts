@@ -4,13 +4,14 @@ import { StyleSheet } from "react-native"
 export const style = StyleSheet.create({ 
     container:{
         flex:1,
-        alignItems:'center' 
+        alignContent:"center",
+        alignItems:"center"
     },
 
     blueCard:{
         backgroundColor: theme.colors.azul,
-        width: 400,
-        minHeight: 800,
+        width: "90%",
+        height:"95%",
         borderRadius: 30,
         elevation: 5,
         alignItems:"center",
@@ -22,12 +23,37 @@ export const style = StyleSheet.create({
 
     whiteCard:{
         width:"100%",
+        height:"auto",
         backgroundColor: "#FFF",
         alignContent: 'center',
         alignItems: 'center',
+        justifyContent:"center",
         borderRadius: 15,
         elevation: 3,
-        padding: 30,
+        padding: 25,
         gap:30,
-    }
+    },
+
+    logo:{
+        width:"80%",
+        height:"30%"
+    },
+
+    
+    buttonAzul:{
+        width: "80%",
+        height: "15%",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: theme.colors.azul,
+        borderRadius: 15,
+        elevation: 3
+    },
+
+    titleBtAzul:{
+        fontSize: 18,
+        fontStyle:"normal",
+        color:"#FFF",
+        fontWeight: "bold"
+    },
 })

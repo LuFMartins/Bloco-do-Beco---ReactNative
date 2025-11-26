@@ -3,9 +3,10 @@ import { StyleSheet } from "react-native";
 export const style = StyleSheet.create({
     cobertura:{
         width:"100%", 
-        maxHeight:253, 
+        maxHeight:"26%", 
         borderBottomLeftRadius:20, 
-        borderBottomRightRadius:20
+        borderBottomRightRadius:20,
+        margin:0
     },
 
     search:{

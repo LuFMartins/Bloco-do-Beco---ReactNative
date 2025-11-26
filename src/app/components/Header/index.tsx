@@ -1,5 +1,6 @@
 import { theme } from "@/src/app/theme/theme"
 import { AuthContext } from "@/src/firebase/contexts/AuthContext"
+import { logout } from "@/src/firebase/services/authentication"
 import { Ionicons } from "@expo/vector-icons"
 import { useContext } from "react"
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
@@ -8,21 +9,21 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
     const { usuario } = useContext(AuthContext);
     return(
         <View style={[style.header, {backgroundColor}]}>
-            <TouchableOpacity activeOpacity={0.8}>
-                <Image style={{width: 70, height: 70}} source={require("@/assets/images/LogoBdB2.png")}/>
+            <TouchableOpacity activeOpacity={0.8} style={style.logoBt}>
+                <Image style={style.logoImg} source={require("@/assets/images/LogoBdB2.png")}/>
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={0.9}>
+            <TouchableOpacity activeOpacity={0.9} style={{width:"20%"}}>
                 <View style={style.user}>
-                    <Image style={{width: 45, height: 45, borderRadius:100}} source={require("@/assets/images/icon.png")}/>
+                    <Image style={style.userImg} source={require("@/assets/images/icon.png")}/>
                     <Text style={style.title}>{usuario?.nome}</Text>
                 </View>
             </TouchableOpacity>
             <View style={style.nav}>
                 <TouchableOpacity>
-                    <Ionicons name="notifications" size={20} color={"#FFF"}/>
+                    <Ionicons name="notifications" size={22} color={"#FFF"}/>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Ionicons name="menu" size={20} color={"#FFF"}/>
+                <TouchableOpacity onPress={logout}>
+                    <Ionicons name="menu" size={22} color={"#FFF"}/>
                 </TouchableOpacity>
             </View>
         </View>
@@ -32,34 +33,55 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
 const style = StyleSheet.create({
     header:{
         width: "100%",
-        height: 110,
+        height:"13%",
         flexDirection: "row",
-        justifyContent: "space-around",
         alignContent:"center",
         alignItems: "center",
-        gap:40,
-        paddingHorizontal: 20,
         borderBottomWidth:1,
-        borderColor: theme.colors.cinza
+        borderColor: theme.colors.cinza,
+        justifyContent:"space-around"
+
     },
 
     user:{
-        flexDirection: "row",
+        flexDirection: "column",
         gap:10,
         justifyContent:"center",
-        width: 150,
+        width: "100%",
         alignContent:"center",
-        alignItems:"center"
+        alignItems:"center",
     },
 
     title:{
         color: "#FFF",
-        fontSize:15,
-        width:"100%"
+        fontSize:12,
+        width:"100%",
+        textAlign:"center"
     },
 
     nav:{
         flexDirection:"row",
-        gap: 20
-    }
+        gap: 15,
+        width:"20%",
+        alignItems:"center",
+        alignContent:"center",
+        justifyContent: "center"
+    },
+
+    logoImg:{
+        height:"100%",
+        minWidth: "100%",
+        maxWidth: "100%",
+    },
+
+    userImg:{
+        height:"48%",
+        width: "50%",
+        borderRadius: 50
+    },
+
+    logoBt:{
+        width: "20%",
+        height: "80%"
+    },
 })

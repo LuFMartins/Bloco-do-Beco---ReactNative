@@ -1,10 +1,9 @@
 import { StyleSheet } from "react-native"
-import { theme } from "../../../theme/theme"
 
 export const style = StyleSheet.create({
     button:{
-        width: 300,
-        height: 70,
+        width: "65%",
+        height: "10%",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#FFF",

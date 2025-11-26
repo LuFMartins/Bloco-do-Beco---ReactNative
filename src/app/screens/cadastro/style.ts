@@ -1,26 +1,27 @@
 import { theme } from "@/src/app/theme/theme"
-import { StyleSheet } from "react-native"
+import { Dimensions, StyleSheet } from "react-native"
 
 export const style = StyleSheet.create({ 
     container:{
         flex:1,
         alignItems:'center',
+        alignContent:"center"
     },
 
     container_02:{
-        alignItems:'center',
+        flex:1
     },
 
     blueCard:{
         backgroundColor: theme.colors.azul,
-        width: 400,
+        width: "90%",
+        height:"99%",
         paddingBottom:20,
         alignContent: 'center',
         alignItems: 'center',
         borderRadius: 30,
         elevation: 5,
         justifyContent: "space-around",
-        marginBottom: 5
     },
 
     whiteCard:{
@@ -32,5 +33,18 @@ export const style = StyleSheet.create({
         elevation: 3,
         padding: 30,
         gap:30,
+        marginBottom:70
+    },
+
+    safe:{
+        flex:1,
+        alignContent:"center",
+        alignItems:"center",
+    },
+
+    scroll:{
+        flexGrow: 1,
+        width:Dimensions.get('window').width,
+        alignItems:"center",
     }
 })

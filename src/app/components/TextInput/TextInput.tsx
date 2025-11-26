@@ -10,11 +10,11 @@ export function Input (props: TextInputProps){
 const style = StyleSheet.create({
     input:{
         width: "100%",
-        height: 30,
+        height: 25,
         borderBottomColor: theme.colors.cinza,
         borderBottomWidth: 1,
         textAlign:'left',
-        padding: 5,
-        fontSize:18,
+        padding: 3,
+        fontSize:15,
     }
 })

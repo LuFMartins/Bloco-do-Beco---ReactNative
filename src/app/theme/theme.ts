@@ -1,4 +1,6 @@
+
 export const theme = {
+
     colors: {
         azul: "#2471F4",
         roxo: "#A96DA8",
