@@ -19,7 +19,7 @@ export function SenhaInput ({...props}: TextInputProps){
             }}
             />
             
-            <TouchableOpacity onPress={() => setMostrarSenha(!mostrarSenha)}>
+            <TouchableOpacity onPress={() => setMostrarSenha(!mostrarSenha)} style={{padding:10}}>
                 <Text style={{fontSize:theme.fonts.p}}>{mostrarSenha? icoClose : icoOlho}</Text>
             </TouchableOpacity>
             
