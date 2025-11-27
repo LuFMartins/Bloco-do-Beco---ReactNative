@@ -1,10 +1,10 @@
-import { Arrow } from "@/src/app/components/Button/ButtonVoltar/Arrow"
 import { Header } from "@/src/app/components/Header"
 import { TextoAlerta } from "@/src/app/components/Texto"
 import { theme } from "@/src/app/theme/theme"
 import { StatusBar } from "expo-status-bar"
-import { ImageBackground, Text, View } from "react-native"
+import { ImageBackground } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import { TitleScreens } from "../../components/TitleScreens"
 
 export default function Espaco(){
     return(
@@ -12,10 +12,7 @@ export default function Espaco(){
             <StatusBar style="dark"/>
             <SafeAreaView>
                 <Header backgroundColor={theme.colors.marrom}/>
-                <View style={{flexDirection: "row", justifyContent: "space-around", alignItems:"center", padding: 20, backgroundColor:"#FFF", borderBottomWidth:1, borderBottomColor:theme.colors.marrom}}>
-                    <Arrow backgroundColor={theme.colors.marrom} />
-                    <Text style={{width: "100%", textAlign:"center", fontSize:30, color:theme.colors.marrom}}>Solicitação de Espaço</Text>
-                </View>
+                <TitleScreens title="Solicitação de Espaço" backgroundColor={theme.colors.marrom} color={theme.colors.marrom} />
                 <TextoAlerta/>
             </SafeAreaView>
         </ImageBackground>

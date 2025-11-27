@@ -22,7 +22,7 @@ export default function Home(){
                 <StatusBar style="dark"/>
                 <SafeAreaView style={{flex:1}}>
                     <Header backgroundColor={theme.colors.azul}/>
-                    <Image source={require("@/assets/images/BdB.webp")} resizeMode="contain" style={style.cobertura}/>
+                    <Image source={require("@/assets/images/Bdb.png")} resizeMode="contain" style={style.cobertura}/>
                     
                     <View style={style.gradeButtons}>
                         <View style={style.grade}>

@@ -1,3 +1,4 @@
+import { theme } from "@/src/app/theme/theme";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-native";
@@ -12,26 +13,24 @@ export function Arrow({ backgroundColor = "", ...props }: ArrowProps) {
       {...props}
       style={[style.container, { backgroundColor }]}
         onPress={() => router.back()}>
-      <Ionicons name="arrow-back" style={style.title} />
+      <Ionicons name="arrow-back" style={style.arrow} />
     </TouchableOpacity>
   );
 }
 
 const style = StyleSheet.create({
     container:{
-        width: 60,
-        height: 60,
-        padding: 20,
-        alignItems:"center",
+        width: "18%",
+        height: "50%",
+        padding: 10,
         borderRadius: 10,
+        justifyContent:"center"
     },
 
-    title:{
+    arrow:{
         textAlign:"center",
         color:"#FFF", 
-        width:70,
-        fontSize: 20,
-        alignItems:"center",
-        justifyContent:"center",
+        width:"100%",
+        fontSize: theme.fonts.h2,
     }
 })
