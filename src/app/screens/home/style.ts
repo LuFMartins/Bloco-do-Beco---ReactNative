@@ -13,17 +13,17 @@ export const style = StyleSheet.create({
     },
 
     grade:{
-        flex:1,
         flexDirection:"column",  
         justifyContent:"center", 
         alignItems:"center", 
         alignContent:"center",
         gap:30,
+        marginVertical: 50
     },
 
     img:{
         width:"18%", 
-        height:"100%",
+        height:50,
         resizeMode:"center", 
         flexDirection: "column",
         justifyContent:"center",
@@ -33,9 +33,9 @@ export const style = StyleSheet.create({
     button:{
         flexDirection:"row",
         width:"80%",
-        height:"18%",
+        minHeight:110,
         backgroundColor:"white",
-        padding:15,
+        paddingHorizontal:30,
         borderRadius: 15,
         alignContent:"center",
         alignItems:"center",

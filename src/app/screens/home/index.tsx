@@ -5,7 +5,7 @@ import { AuthContext } from "@/src/firebase/contexts/AuthContext"
 import { router } from "expo-router"
 import { StatusBar } from "expo-status-bar"
 import { useContext } from 'react'
-import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native"
+import { Dimensions, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import { style } from "./style"
 
@@ -25,24 +25,36 @@ export default function Home(){
                     <Image source={require("@/assets/images/Bdb.png")} resizeMode="contain" style={style.cobertura}/>
                     
                     <View style={style.gradeButtons}>
-                        <View style={style.grade}>
-                            <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={()=>router.push("/screens/eventos")}>
-                                <Image source={require("@/assets/images/eventos.png")} resizeMode="cover" style={style.img}/>
-                                <Text style={[style.title, {color:theme.colors.roxo}]}>Eventos</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={() => router.push("/screens/cursos")}>
-                                <Image source={require("@/assets/images/cursos.png")} resizeMode="cover" style={style.img}/>
-                                <Text style={[style.title, {color:theme.colors.rosa}]}>Cursos</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={() => router.push("/screens/meusCursos")}>
-                                <Image source={require("@/assets/images/meusCursos.png")} resizeMode="cover" style={style.img}/>
-                                <Text style={[style.title, {color:theme.colors.verde}]}>Meus Cursos</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={style.button} activeOpacity={0.8}onPress={() => router.push("/screens/espaco")}>
-                                <Image source={require("@/assets/images/espaço.png")} resizeMode="cover" style={style.img}/>
-                                <Text style={[style.title, {color:theme.colors.marrom}]}>Solicitação de Espaço</Text>
-                            </TouchableOpacity>
-                        </View>
+                        <ScrollView 
+                        showsVerticalScrollIndicator={false}
+                        contentContainerStyle={{
+                            width: Dimensions.get('window').width,
+                            flexGrow:1
+                            
+                        }}>
+                            <View style={style.grade}>
+                                <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={()=>router.push("/screens/eventos")}>
+                                    <Image source={require("@/assets/images/eventos.png")} resizeMode="cover" style={style.img}/>
+                                    <Text style={[style.title, {color:theme.colors.roxo}]}>Eventos</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={() => router.push("/screens/cursos")}>
+                                    <Image source={require("@/assets/images/cursos.png")} resizeMode="cover" style={style.img}/>
+                                    <Text style={[style.title, {color:theme.colors.rosa}]}>Cursos</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={() => router.push("/screens/meusCursos")}>
+                                    <Image source={require("@/assets/images/meusCursos.png")} resizeMode="cover" style={style.img}/>
+                                    <Text style={[style.title, {color:theme.colors.verde}]}>Meus Cursos</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={style.button} activeOpacity={0.8}onPress={() => router.push("/screens/espaco")}>
+                                    <Image source={require("@/assets/images/espaço.png")} resizeMode="cover" style={style.img}/>
+                                    <Text style={[style.title, {color:theme.colors.marrom}]}>Solicitação de Espaço</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={style.button} activeOpacity={0.8}onPress={() => router.push("/screens/minhasPesquisas")}>
+                                    <Image source={require("@/assets/images/minhasPesquisas.png")} resizeMode="cover" style={style.img}/>
+                                    <Text style={[style.title, {color:theme.colors.amarelo}]}>Minhas Pesquisas</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </ScrollView>
                     </View>
                 </SafeAreaView>
             </ImageBackground>

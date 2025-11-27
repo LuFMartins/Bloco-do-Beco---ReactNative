@@ -2,12 +2,14 @@ import { theme } from "@/src/app/theme/theme"
 import { AuthContext } from "@/src/firebase/contexts/AuthContext"
 import { logout } from "@/src/firebase/services/authentication"
 import { Ionicons } from "@expo/vector-icons"
-import { router } from "expo-router"
+import { DrawerActions } from "@react-navigation/native"
+import { router, useNavigation } from "expo-router"
 import { useContext } from "react"
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 export function Header({backgroundColor = ""}){ // adicionar parametro que puxa nome do usuario
     const { usuario } = useContext(AuthContext);
+    const navigation = useNavigation();
 
     function EncerrarSessao(){
         logout()
@@ -32,10 +34,10 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
             {/* notificação e menu */}
             <View style={style.nav}>
                 <TouchableOpacity>
-                    <Ionicons name="notifications" size={22} color={"#FFF"}/>
+                    <Ionicons name="notifications" size={20} color={"#FFF"}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={EncerrarSessao}>
-                    <Ionicons name="menu" size={22} color={"#FFF"}/>
+                <TouchableOpacity onPress={()=> navigation.dispatch(DrawerActions.openDrawer())}>
+                    <Ionicons name="menu" size={25} color={"#FFF"}/>
                 </TouchableOpacity>
             </View>
 
@@ -75,7 +77,7 @@ const style = StyleSheet.create({
 
     nav:{
         flexDirection:"row",
-        gap: 15,
+        gap: 20,
         width:"20%",
         alignItems:"center",
         alignContent:"center",

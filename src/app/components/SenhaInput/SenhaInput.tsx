@@ -16,6 +16,7 @@ export function SenhaInput ({...props}: TextInputProps){
                 borderBottomWidth:1,
                 borderBottomColor:"#AAA",
                 width:"90%",
+                fontSize:theme.fonts.p
             }}
             />
             

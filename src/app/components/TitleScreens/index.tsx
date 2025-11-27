@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../theme/theme";
 import { Arrow } from "../Button/ButtonVoltar/Arrow";
 
-export function TitleScreens({title, backgroundColor, color}:{title:string, backgroundColor:string, color:string}){
+export function TitleScreens({title, backgroundColor, color, borderBottomColor}:{title:string, backgroundColor:string, color:string, borderBottomColor:string}){
     return(
         <View 
             style={style.bar}>
@@ -18,9 +18,12 @@ const style = StyleSheet.create({
         height:"12%",
         flexDirection: "row", 
         justifyContent: "space-around", 
-        alignItems:"center", 
-        borderBottomWidth:1, 
-        borderBottomColor:theme.colors.roxo
+        alignItems:"center",
+        borderBottomRightRadius:15,
+        borderBottomLeftRadius:15,
+        backgroundColor:"white",
+        shadowColor:"gray",
+        elevation:10
     },
 
     text:{

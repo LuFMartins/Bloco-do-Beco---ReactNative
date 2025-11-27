@@ -10,7 +10,7 @@ export default function Espaco(){
     return(
         <ImageBackground style={{flex:1}} source={require("@/assets/images/PlanoDeFundo.png")}>
             <StatusBar style="dark"/>
-            <SafeAreaView>
+            <SafeAreaView style={{flex:1}}>
                 <Header backgroundColor={theme.colors.marrom}/>
                 <TitleScreens title="Solicitação de Espaço" backgroundColor={theme.colors.marrom} color={theme.colors.marrom} />
                 <TextoAlerta/>

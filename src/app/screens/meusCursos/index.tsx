@@ -10,7 +10,7 @@ export default function MeusCursos(){
     return(
         <ImageBackground style={{flex:1}} source={require("@/assets/images/PlanoDeFundo.png")}>
             <StatusBar style="dark"/>
-            <SafeAreaView>
+            <SafeAreaView style={{flex:1}}>
                 <Header backgroundColor={theme.colors.verde}/>
                 <TitleScreens title="Meus Cursos" backgroundColor={theme.colors.verde} color={theme.colors.verde} />
                 <TextoAlerta/>
