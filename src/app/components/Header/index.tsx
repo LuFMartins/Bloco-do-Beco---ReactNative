@@ -2,11 +2,17 @@ import { theme } from "@/src/app/theme/theme"
 import { AuthContext } from "@/src/firebase/contexts/AuthContext"
 import { logout } from "@/src/firebase/services/authentication"
 import { Ionicons } from "@expo/vector-icons"
+import { router } from "expo-router"
 import { useContext } from "react"
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
 export function Header({backgroundColor = ""}){ // adicionar parametro que puxa nome do usuario
     const { usuario } = useContext(AuthContext);
+
+    function EncerrarSessao(){
+        logout()
+        router.replace("/screens/inicial")
+    }
     return(
         <View style={[style.header, {backgroundColor}]}>
             <TouchableOpacity activeOpacity={0.8} style={style.logoBt}>
@@ -22,7 +28,7 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
                 <TouchableOpacity>
                     <Ionicons name="notifications" size={22} color={"#FFF"}/>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={logout}>
+                <TouchableOpacity onPress={EncerrarSessao}>
                     <Ionicons name="menu" size={22} color={"#FFF"}/>
                 </TouchableOpacity>
             </View>
