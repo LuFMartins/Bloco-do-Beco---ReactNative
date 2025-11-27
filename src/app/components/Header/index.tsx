@@ -15,15 +15,21 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
     }
     return(
         <View style={[style.header, {backgroundColor}]}>
+            
+            {/* Logo bloco do beco */}
             <TouchableOpacity activeOpacity={0.8} style={style.logoBt}>
                 <Image style={style.logoImg} source={require("@/assets/images/LogoBdB2.png")}/>
             </TouchableOpacity>
+            
+            {/* perfil do usuario */}
             <TouchableOpacity activeOpacity={0.9} style={{width:"20%"}}>
                 <View style={style.user}>
-                    <Image style={style.userImg} source={require("@/assets/images/icon.png")}/>
-                    <Text style={style.title}>{usuario?.nome}</Text>
+                    <Image style={[style.userImg, {backgroundColor:"black", borderRadius:50}]} source={require("@/assets/images/icon.png")}/>
+                    <Text style={style.title} numberOfLines={1}>{usuario?.nome}</Text>
                 </View>
             </TouchableOpacity>
+            
+            {/* notificação e menu */}
             <View style={style.nav}>
                 <TouchableOpacity>
                     <Ionicons name="notifications" size={22} color={"#FFF"}/>
@@ -32,6 +38,7 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
                     <Ionicons name="menu" size={22} color={"#FFF"}/>
                 </TouchableOpacity>
             </View>
+
         </View>
     )
 }
@@ -39,7 +46,7 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
 const style = StyleSheet.create({
     header:{
         width: "100%",
-        height:"13%",
+        height:"12%",
         flexDirection: "row",
         alignContent:"center",
         alignItems: "center",
@@ -50,10 +57,11 @@ const style = StyleSheet.create({
     },
 
     user:{
-        flexDirection: "column",
-        gap:10,
-        justifyContent:"center",
+        flexDirection: "row",
+        gap:8,
         width: "100%",
+        height:"100%",
+        justifyContent:"center",
         alignContent:"center",
         alignItems:"center",
     },
@@ -62,7 +70,7 @@ const style = StyleSheet.create({
         color: "#FFF",
         fontSize:12,
         width:"100%",
-        textAlign:"center"
+        textAlign:"left"
     },
 
     nav:{
@@ -76,14 +84,14 @@ const style = StyleSheet.create({
 
     logoImg:{
         height:"100%",
-        minWidth: "100%",
-        maxWidth: "100%",
+        width:"70%",
+        resizeMode:"contain",
     },
 
     userImg:{
-        height:"48%",
-        width: "50%",
-        borderRadius: 50
+        width:"50%",
+        height:"42%",
+        resizeMode:"cover"
     },
 
     logoBt:{

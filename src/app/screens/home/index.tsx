@@ -24,7 +24,7 @@ export default function Home(){
                     <Header backgroundColor={theme.colors.azul}/>
                     <Image source={require("@/assets/images/BdB.webp")} resizeMode="contain" style={style.cobertura}/>
                     
-                    <View style={{alignItems:"center", justifyContent:"center", alignContent:"center", flex:1}}>
+                    <View style={style.gradeButtons}>
                         <View style={style.grade}>
                             <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={()=>router.push("/screens/eventos")}>
                                 <Image source={require("@/assets/images/eventos.png")} resizeMode="cover" style={style.img}/>
