@@ -1,9 +1,15 @@
 import { theme } from "@/src/app/theme/theme";
 import { Ionicons } from "@expo/vector-icons";
-import { useState } from "react";
+import { useFocusEffect } from "expo-router";
+import React, { useState } from "react";
 import { Text, TextInput, TextInputProps, TouchableOpacity, View } from "react-native";
 
 export function SenhaInput ({...props}: TextInputProps){
+
+
+    useFocusEffect(React.useCallback(() => {
+        setMostrarSenha(false)
+    }, []))
 
     const [mostrarSenha, setMostrarSenha] = useState(false)
     const icoOlho = <Ionicons name="eye" size={theme.fonts.h2} color="black"/>
@@ -11,7 +17,7 @@ export function SenhaInput ({...props}: TextInputProps){
 
     return(
         <View style={{flexDirection: "row", width:"100%", justifyContent:"space-between", alignItems:"center"}}>
-            <TextInput {...props} placeholder="Senha" secureTextEntry={!mostrarSenha} 
+            <TextInput {...props} placeholder="Senha" autoCapitalize="none" secureTextEntry={!mostrarSenha} 
             style={{
                 borderBottomWidth:1,
                 borderBottomColor:"#AAA",
