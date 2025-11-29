@@ -34,6 +34,7 @@ export default function RootLayout() {
             drawerContent={(props) => <CustomDrawer{...props}/>}
           >
             <Drawer.Screen name="screens/home/index" options={{drawerLabel:"Home"}}/>
+            <Drawer.Screen name="screens/perfilUser/index" options={{drawerLabel:"Perfil"}}/>
             <Drawer.Screen name="screens/eventos/index" options={{drawerLabel:"Eventos"}}/>
             <Drawer.Screen name="screens/cursos/index" options={{drawerLabel:"Cursos"}}/>
             <Drawer.Screen name="screens/meusCursos/index" options={{drawerLabel:"Meus Cursos"}}/>

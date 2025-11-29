@@ -14,6 +14,7 @@ export const theme = {
     },
 
     fonts:{
+        h0: RFPercentage(3),
         h1: RFPercentage(2.5),
         h2: RFPercentage(2),
         p: RFPercentage(1.5),

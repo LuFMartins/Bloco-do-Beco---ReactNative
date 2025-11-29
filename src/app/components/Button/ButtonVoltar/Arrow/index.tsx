@@ -5,15 +5,16 @@ import { StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-nativ
 
 type ArrowProps = TouchableOpacityProps & {
   backgroundColor?: string;
+  color?: string
 };
 
-export function Arrow({ backgroundColor = "", ...props }: ArrowProps) {
+export function Arrow({ backgroundColor = "", color="", ...props }: ArrowProps) {
   return (
     <TouchableOpacity
       {...props}
-      style={[style.container, { backgroundColor }]}
+      style={[style.container, {backgroundColor}]}
         onPress={() => router.back()}>
-      <Ionicons name="arrow-back" style={style.arrow} />
+      <Ionicons name="arrow-back" style={[style.arrow, {color}]} />
     </TouchableOpacity>
   );
 }

@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { theme } from "../../theme/theme";
 import { Arrow } from "../Button/ButtonVoltar/Arrow";
 
-export function TitleScreens({title, backgroundColor, color, borderBottomColor}:{title:string, backgroundColor:string, color:string, borderBottomColor:string}){
+export function TitleScreens({title, backgroundColor, color}:{title:string, backgroundColor:string, color:string}){
     return(
         <View 
             style={style.bar}>

@@ -27,6 +27,7 @@ export default function TelaCadastro() {
     const [estadoNascimento, setEstadoNascimento] = useState("");
     const [genero, setGenero] = useState("");
     const [religiao, setReligiao] = useState("");
+    const [raca, setRaca] = useState("");
     const [senha, setSenha] = useState("");
     const emailLimpo = email.trim().toLocaleLowerCase();
     
@@ -39,6 +40,7 @@ export default function TelaCadastro() {
         setEstadoNascimento(""),
         setGenero(""),
         setReligiao(""),
+        setRaca(""),
         setDataNascimento(null),
         setSenha("")
     }, []))
@@ -54,6 +56,7 @@ export default function TelaCadastro() {
         estadoNascimento,
         genero,
         religiao,
+        raca,
         dataNascimento,
         senha
     ];
@@ -77,6 +80,7 @@ export default function TelaCadastro() {
                     estadoNascimento,
                     genero,
                     religiao,
+                    identificacao_racial:raca,
                     dataNascimento: dataNascimento ? dataNascimento.toISOString() : null,
                     criadoEm: new Date().toISOString()
                 })
@@ -133,6 +137,9 @@ export default function TelaCadastro() {
                                 <Input placeholder="Identificação de Gênero" keyboardType="default" value={genero} onChangeText={setGenero}/>
                                 
                                 <Input placeholder="Religião" keyboardType="default" value={religiao} onChangeText={setReligiao}/>
+                                
+                                <Input placeholder="Identificação Racial" keyboardType="default" value={raca} onChangeText={setRaca}/>
+                                
 
                                 {/* Campo de Data de Nascimento*/}
                                 <TouchableOpacity onPress={() => setMostrarCalendario(true)}

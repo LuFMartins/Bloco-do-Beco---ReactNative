@@ -25,7 +25,7 @@ export function Header({backgroundColor = ""}){ // adicionar parametro que puxa 
             </TouchableOpacity>
             
             {/* perfil do usuario */}
-            <TouchableOpacity activeOpacity={0.9} style={{width:"20%"}}>
+            <TouchableOpacity activeOpacity={0.9} style={{width:"20%"}} onPress={()=> router.push("/screens/perfilUser")}>
                 <View style={style.user}>
                     <Image style={[style.userImg, {borderRadius:50}]} source={require("@/assets/images/icon.png")}/>
                     <Text style={style.title} numberOfLines={1}>{usuario?.nome}</Text>
